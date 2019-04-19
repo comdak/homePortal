@@ -7,6 +7,7 @@ class SiteData{
     $pagetitle = mysqli_real_escape_string(htmlspecialchars($pagetitle));
 
     $sql = "UPDATE site_data SET page_title = {$pagetitle}";
+    echo $sql;
 
     if(!$conn->query($sql)){
       echo $conn->error;
@@ -30,6 +31,8 @@ class SiteData{
     $pagecontent = mysqli_real_escape_string(htmlspecialchars($pagecontent));
 
     $sql = "UPDATE site_data SET page_content = {$pagecontent}";
+    echo $sql;
+    
     if(!$conn->query($sql)){
       echo $conn->error;
     }
