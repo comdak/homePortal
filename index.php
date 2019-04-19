@@ -6,6 +6,11 @@
   $buttons = new Buttons();
   $alert = new Alert();
 
+  if($_POST["siteData"]){
+    $data->setPageTitle($_POST["title"]);
+    $data->setPageContent($_POST["content"]);
+  }
+
 ?>
 
 <!DOCTYPE html>
