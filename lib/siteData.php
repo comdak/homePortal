@@ -30,7 +30,9 @@ class SiteData{
     $pagecontent = mysqli_real_escape_string(htmlspecialchars($pagecontent));
 
     $sql = "UPDATE site_data SET page_content = {$pagecontent}";
-    mysqli_query($conn, $sql);
+    if(!$conn->query($sql)){
+      echo $conn->error;
+    }
   }
 
   function getPageContent(){
