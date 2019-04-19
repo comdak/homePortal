@@ -4,6 +4,7 @@ class SiteData{
 
   function setPageTitle($pagetitle){
     global $conn; // todo: replace this with proper approach
+    echo $pagetitle;
     $pagetitle = mysqli_real_escape_string(htmlspecialchars($pagetitle));
     $sql = "UPDATE site_data SET page_title = '{$pagetitle}'";
 
