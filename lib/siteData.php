@@ -4,8 +4,7 @@ class SiteData{
 
   function setPageTitle($pagetitle){
     global $conn; // todo: replace this with proper approach
-    echo $pagetitle;
-    $pagetitle = mysqli_real_escape_string(htmlspecialchars($pagetitle));
+    $pagetitle = mysqli_real_escape_string($pagetitle);
     $sql = "UPDATE site_data SET page_title = '{$pagetitle}'";
 
     if(!$conn->query($sql)){
@@ -27,7 +26,7 @@ class SiteData{
   function setPageContent($pagecontent){
     global $conn; // todo: replace this with proper approach
 
-    $pagecontent = mysqli_real_escape_string(htmlspecialchars($pagecontent));
+    $pagecontent = mysqli_real_escape_string($pagecontent);
     $sql = "UPDATE site_data SET page_content = '{$pagecontent}'";
 
     if(!$conn->query($sql)){
