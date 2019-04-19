@@ -7,6 +7,9 @@
   $alert = new Alert();
 
   if($_POST["siteData"]){
+    echo $_POST;
+    echo $_POST["title"];
+    echo $_POST["content"];
     $data->setPageTitle($_POST["title"]);
     $data->setPageContent($_POST["content"]);
   }
