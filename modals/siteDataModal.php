@@ -28,7 +28,7 @@
             <input type="text" class="form-control" id="font_color" name="font_color" value="na" disabled>
           </div>
           <div class="form-group">
-            <input type="hidden" class="form-control" id="siteData" name="siteData">
+            <input type="hidden" class="form-control" id="siteData" name="siteData" value="1">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
