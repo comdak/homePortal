@@ -53,17 +53,20 @@
         if($_COOKIE["pinerror"]){
           $alert->getAlert("alert-danger", $pinerror);
         }
-       ?>
-          <?php
-          if($_SESSION["adult_only"]){
-            $buttons->getButtons(1, 0);
-          }else{
-            $buttons->getButtons(0, 0);
-          }
-
-            $data->getPageContent();
-
-          ?>
+        if($_SESSION["adult_only"]){
+          $buttons->getButtons(1, 0);
+        }else{
+          $buttons->getButtons(0, 0);
+        }
+        ?>
+        <hr>
+        <div class="row">
+          <div class="col">
+            <?php
+              $data->getPageContent();
+            ?>
+          </div>
+        </div>
     </div>
     <?php
       include "modals/authModal.php";

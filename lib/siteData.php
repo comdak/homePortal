@@ -41,12 +41,7 @@ class SiteData{
       echo $conn->error;
     }
     if($row = $result->fetch_assoc()){
-      echo "<hr>";
-      echo "<div class=\"row\">";
-      echo "<div class=\"col\">";
       echo $row["page_content"];
-      echo "</div>";
-      echo "</div>";
     }
   }
 }
