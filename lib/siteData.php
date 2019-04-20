@@ -4,9 +4,8 @@ class SiteData{
 
   function setPageTitle($pagetitle){
     global $conn; // todo: replace this with proper approach
-    $pagetitle = mysqli_real_escape_string(htmlspecialchars($pagetitle));
-
-    $sql = "UPDATE site_data SET page_title = {$pagetitle}";
+    $pagetitle = mysqli_real_escape_string($conn, htmlspecialchars($pagetitle));
+    $sql = "UPDATE site_data SET page_title = '{$pagetitle}'";
 
     if(!$conn->query($sql)){
       echo $conn->error;
@@ -27,10 +26,12 @@ class SiteData{
   function setPageContent($pagecontent){
     global $conn; // todo: replace this with proper approach
 
-    $pagecontent = mysqli_real_escape_string(htmlspecialchars($pagecontent));
+    $pagecontent = mysqli_real_escape_string($conn, htmlspecialchars($pagecontent));
+    $sql = "UPDATE site_data SET page_content = '{$pagecontent}'";
 
-    $sql = "UPDATE site_data SET page_content = {$pagecontent}";
-    mysqli_query($conn, $sql);
+    if(!$conn->query($sql)){
+      echo $conn->error;
+    }
   }
 
   function getPageContent(){
@@ -40,12 +41,7 @@ class SiteData{
       echo $conn->error;
     }
     if($row = $result->fetch_assoc()){
-      echo "<hr>";
-      echo "<div class=\"row\">";
-      echo "<div class=\"col\">";
       echo $row["page_content"];
-      echo "</div>";
-      echo "</div>";
     }
   }
 }
