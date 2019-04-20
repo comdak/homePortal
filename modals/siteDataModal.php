@@ -13,11 +13,11 @@
         <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="POST">
           <div class="form-group">
             <label for="title">Page Title</label>
-            <input type="text" class="form-control" id="title" name="title" value="<?php $data->getPageTitle; ?>">
+            <input type="text" class="form-control" id="title" name="title" placeholder="<?php $data->getPageTitle(); ?>">
           </div>
           <div class="form-group">
             <label for="content">Page Content</label>
-            <textarea class="form-control" rows="5" id="content" name="content"><?php $data->getPageContent; ?></textarea>
+            <textarea class="form-control" rows="5" id="content" name="content" placeholder="<?php $data->getPageContent(); ?>"></textarea>
           </div>
           <div class="form-group">
             <label for="bg_color">Background Color</label>
