@@ -69,9 +69,10 @@
         </div>
     </div>
     <?php
-      include "modals/authModal.php";
-      include "modals/addModal.php";
-      include "modals/siteDataModal.php";
+      foreach (glob("modals/*.php") as $filename)
+      {
+        include $filename;
+      }
      ?>
   </body>
   <script>
